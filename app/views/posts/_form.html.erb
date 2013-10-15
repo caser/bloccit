@@ -13,7 +13,6 @@
     <%= f.label :title, class: 'control-label' %>
     <div class="controls">
       <%= f.text_field :title %>
-      <p>Topic is: <%= topic.inspect %><br>Post is: <%= post.inspect %></p>
     </div>
   <% end %>
   <%= control_group_tag(post.errors[:body]) do %>
