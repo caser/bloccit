@@ -15,3 +15,13 @@
     <% end %>
   </div>
 </div>
+<div class="row">
+  <h3>Comments</h3>
+  <div class="span8">
+    <%= render @comments %>
+    <%= will_paginate @comments %>
+  </div>
+  <div class="span4">
+    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+  </div>
+</div>

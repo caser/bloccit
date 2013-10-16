@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="media-body">
+    <p>
+      <%= markdown comment %>
+    </p>
+    <small>
+      <%= image_tag(comment.user.avatar.tiny.url) if comment.user.avatar? %>
+      submitted by <%= comment.user.name %>
+    </small>
+  </div>
+</div>

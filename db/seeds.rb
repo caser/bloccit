@@ -9,7 +9,9 @@ topics = []
   )
 end
 
-rand(4..10).times do
+rndm = rand(4..10)
+
+rndm.times do
 
   password = Faker::Lorem.characters(10)
   u = User.new(
@@ -35,7 +37,8 @@ rand(4..10).times do
 
     rand(3..7).times do
       p.comments.create(
-        body: Faker::Lorem.paragraphs(rand(1..2)).join("\n")
+        body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"),
+        user_id: (rand(1..rndm))
       )
     end
 
