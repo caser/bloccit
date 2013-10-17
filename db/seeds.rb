@@ -38,6 +38,7 @@ rndm.times do
     rand(3..7).times do
       p.comments.create(
         body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"),
+        # TODO: Refactor using .build(params[hash])
         user_id: (rand(1..rndm))
       )
     end
