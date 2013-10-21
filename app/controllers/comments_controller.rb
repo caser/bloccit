@@ -49,4 +49,15 @@ class CommentsController < ApplicationController
       redirect_to [@topic, @post]
     end
   end
+
+  after_create :send_favorite_emails
+
+  private
+
+  def send_favorite_emails
+    self.post.favorites.each do |favorite|
+      FavoriteMailer.new_comment(favorite.user, self.post, self).deliver
+    end
+  end
+  
 end
