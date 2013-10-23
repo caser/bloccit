@@ -29,7 +29,7 @@
 <div class="row">
   <h3>Comments</h3>
   <div class="span8">
-    <%= render @comments %>
+    <%= render partial: 'comments/comment', collection: @comments %>
     <%= will_paginate @comments %>
   </div>
   <div class="span4">
