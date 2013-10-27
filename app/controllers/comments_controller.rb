@@ -20,14 +20,18 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(params[:comment])
     @comment.user = current_user
     @comment.post = @post
+    @new_comment = Comment.new
 
     authorize! :create, @comment, message: "You need to be signed in to do that."
+    
     if @comment.save
       flash[:notice] = "Comment was saved."
-      redirect_to [@topic, @post]
     else
       flash[:error] = "There was an error saving the comment. Please try again."
-      redirect_to [@topic, @post]
+    end
+
+    respond_with(@comment) do |f|
+      f.html { redirect_to [@topic, @post] }
     end
   end
 

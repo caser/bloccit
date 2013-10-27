@@ -30,8 +30,10 @@
   <hr />
   <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
   <div class="span8">
-    <%= render partial: 'comments/comment', collection: @comments %>
-    <%= will_paginate @comments %>
+    <div class="js-comments">
+      <%= render partial: 'comments/comment', collection: @comments %>
+      <%= will_paginate @comments %>
+    </div>
   </div>
   <div class="span4">
     <% if can? :create, Comment %>
