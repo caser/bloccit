@@ -52,6 +52,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner'
+  # gem 'simplecov', :require => false, :group => :test
 end
 
 # To use ActiveModel has_secure_password
