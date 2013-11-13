@@ -24,6 +24,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'split', require: 'split/dashboard'
+
 gem 'newrelic_rpm'
 
 gem 'faker'
@@ -46,6 +48,8 @@ gem 'will_paginate', '~> 3.0'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'mongoid', '~>3.0.0'
 
 group :development, :test do
   gem 'rspec-rails'

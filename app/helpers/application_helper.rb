@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  include Split::Helper
+
   def control_group_tag(errors, &block)
     if errors.any?
       content_tag :div, capture(&block), class: 'control-group error'
